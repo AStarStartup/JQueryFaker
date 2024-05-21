@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>AStartup MCC User Personas</title>
+  </head>
+  <body>
+    <div id="navbar">User Personas</div>
+    <div id="wrapper">
+    </div>
+    <script type="module">
+      import { faker } from 'https://esm.sh/@faker-js/faker/locale/en_US';
+      
+      for(let i=0; i < 10; ++i) {
+        jQuery('<div/>', {
+          text: faker.person.firstName() + '-' + faker.company.name()
+        }).appendTo('#wrapper');
+        
+        jQuery('<img/>', {
+          src: faker.image.avatar()
+        }).appendTo('#wrapper');
+      }
+    </script>
+  </body>
+</html>
